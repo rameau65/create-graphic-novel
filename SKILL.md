@@ -40,6 +40,22 @@ Use explicit user choices as authoritative. If a noncritical choice is missing, 
 
 Ask only if a missing choice would materially change the story, identity, doctrine, audience suitability, or deliverable. Do not re-ask for facts already present in attachments or conversation.
 
+## Lock page count and ratio before production
+
+For paged graphic novels, treat the following as non-negotiable defaults unless the user explicitly overrides them in the current request:
+
+- **Body length:** exactly 8 story pages.
+- **Cover:** one separate cover; never count it as one of the 8 body pages.
+- **Canvas:** every cover and body page is **3:4 portrait**.
+- Record the specification at the top of the production brief as: `Cover 1 + Body 8 / 3:4 portrait`.
+
+Run this check twice:
+
+1. **Preflight:** before scripting, storyboarding, prompting, generating images, laying out text, revising, or exporting, confirm the body-page count and canvas ratio.
+2. **Final gate:** before delivery, count the body pages again and inspect every page dimension. Correct missing, extra, cropped, stretched, or off-ratio pages before calling the work complete.
+
+A reference image with another ratio does not override these defaults. Only an explicit user instruction may change page count or ratio. When the user overrides either value, state the override clearly and use it consistently through production and final QA.
+
 ## Build a Project DNA block
 
 Create this single source of truth before scripting:
@@ -122,6 +138,7 @@ When the user asks to change one page, panel, person, hand, text block, ratio, o
 2. State invariants: what must remain unchanged.
 3. Edit only the requested region or page.
 4. Recheck neighboring continuity and overall dimensions.
-5. Deliver the corrected artifact plus a concise change note.
+5. Re-run the page-count and 3:4 ratio gate; for default paged work, verify one separate cover plus exactly 8 body pages.
+6. Deliver the corrected artifact plus a concise change note.
 
 Do not regenerate unrelated pages unless continuity makes it necessary or the user requests a full rebuild.
