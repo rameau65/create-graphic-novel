@@ -32,35 +32,38 @@ Use explicit user choices as authoritative. If a noncritical choice is missing, 
 - language: user's language
 - format: paged graphic novel
 - length: cover plus 8 story pages
-- page ratio: 3:4 portrait
+- aspect-ratio options for generated paged/single-image work: **3:4 portrait** or **16:9 landscape**
+- default ratio when the user does not choose: **3:4 portrait**
 - reading order: left-to-right, top-to-bottom
 - atmosphere: source-appropriate, avoiding unrequested grimness
 - generated-frame text: none; composite captions and dialogue afterward
 - prompts: English instructions with exact on-page copy preserved in its original language
 
-Ask only if a missing choice would materially change the story, identity, doctrine, audience suitability, or deliverable. Do not re-ask for facts already present in attachments or conversation.
+Ask only if a missing choice would materially change the story, identity, doctrine, audience suitability, or deliverable. Do not re-ask for facts already present in attachments or conversation. If the requested output can reasonably be either portrait-page or widescreen, present the two supported generation choices as `3:4 portrait` and `16:9 landscape`; if the user does not choose, continue with 3:4.
 
 ## Lock page count and ratio before production
 
-For paged graphic novels, treat the following as non-negotiable defaults unless the user explicitly overrides them in the current request:
+For paged graphic novels, treat the following as production locks unless the user explicitly overrides them in the current request:
 
-- **Body length:** exactly 8 story pages.
+- **Body length:** exactly 8 story pages by default.
 - **Cover:** one separate cover; never count it as one of the 8 body pages.
-- **Canvas:** every cover and body page is **3:4 portrait**.
-- Record the specification at the top of the production brief as: `Cover 1 + Body 8 / 3:4 portrait`.
+- **Canvas option A:** **3:4 portrait** — default for conventional graphic-novel pages and covers.
+- **Canvas option B:** **16:9 landscape** — supported for widescreen, presentation, video-frame, cinematic, or horizontal graphic-novel delivery.
+- Never mix 3:4 and 16:9 within one deliverable unless the user explicitly requests mixed ratios.
+- Record the selected specification at the top of the production brief, for example: `Cover 1 + Body 8 / 3:4 portrait` or `Cover 1 + Body 8 / 16:9 landscape`.
 
 Run this check twice:
 
-1. **Preflight:** before scripting, storyboarding, prompting, generating images, laying out text, revising, or exporting, confirm the body-page count and canvas ratio.
-2. **Final gate:** before delivery, count the body pages again and inspect every page dimension. Correct missing, extra, cropped, stretched, or off-ratio pages before calling the work complete.
+1. **Preflight:** before scripting, storyboarding, prompting, generating images, laying out text, revising, or exporting, confirm the body-page count and selected canvas ratio.
+2. **Final gate:** before delivery, count the body pages again and inspect every page dimension. Correct missing, extra, cropped, stretched, mixed-ratio, or off-ratio pages before calling the work complete.
 
-A reference image with another ratio does not override these defaults. Only an explicit user instruction may change page count or ratio. When the user overrides either value, state the override clearly and use it consistently through production and final QA.
+A reference image with another ratio does not override the selected production ratio. Explicit user instructions may change page count or ratio. When the user overrides either value, state the override clearly and use it consistently through production and final QA.
 
 ## Build a Project DNA block
 
 Create this single source of truth before scripting:
 
-- title, logline, thesis, audience, format, length, ratio
+- title, logline, thesis, audience, format, length, selected ratio
 - visual medium, palette, linework, texture, lighting, mood
 - character anchors: age range, face, hair, body, clothing, signature props
 - environment anchors and recurring symbols
@@ -93,6 +96,7 @@ For each page or segment, specify:
 - Reserve negative space for captions and balloons. Treat every character face as a protected no-text zone; text must never cover or visually crowd a face, and should also avoid hands, eyes, mouths, and critical action.
 - Keep each panel legible at final reading size.
 - For a cover, prioritize one iconic image, title zone, silhouette, and tonal promise; do not summarize the entire plot.
+- Adapt composition to the selected ratio: use vertical depth, stacked rhythm, and tall negative-space zones for 3:4; use lateral staging, horizontal eyelines, cinematic depth, and left/right text-safe zones for 16:9.
 
 ## Balance every text container
 
@@ -109,7 +113,7 @@ When the user asks for actual images, use the available image-generation capabil
 
 Create one prompt per page/cut rather than asking a model to invent the whole book at once. Each prompt must identify reference-image order explicitly and include:
 
-`subject + action + environment + composition/panels + camera + lighting + medium/style tokens + palette + continuity anchors + reserved text space + constraints`
+`subject + action + environment + composition/panels + camera + lighting + medium/style tokens + palette + continuity anchors + selected ratio + reserved text space + constraints`
 
 Do not claim exact resolution or model-version support without verification. Preserve a user-specified model version; otherwise use a replaceable version token or omit it.
 
@@ -138,7 +142,7 @@ When the user asks to change one page, panel, person, hand, text block, ratio, o
 2. State invariants: what must remain unchanged.
 3. Edit only the requested region or page.
 4. Recheck neighboring continuity and overall dimensions.
-5. Re-run the page-count and 3:4 ratio gate; for default paged work, verify one separate cover plus exactly 8 body pages.
+5. Re-run the page-count and selected-ratio gate; verify one separate cover plus exactly 8 body pages by default, and verify every generated page is consistently 3:4 or 16:9 according to the locked option.
 6. Deliver the corrected artifact plus a concise change note.
 
 Do not regenerate unrelated pages unless continuity makes it necessary or the user requests a full rebuild.
