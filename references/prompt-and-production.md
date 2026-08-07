@@ -1,5 +1,16 @@
 # Prompt and production
 
+## Ratio lock
+
+Every generated page/cut prompt must carry the production ratio selected in the brief.
+
+- Supported standard options: **3:4 portrait** and **16:9 landscape**.
+- Default for paged graphic novels: **3:4 portrait**.
+- Use **16:9 landscape** when the user requests widescreen, cinematic, presentation, or video-frame composition.
+- Keep cover and body on the same ratio unless explicitly overridden.
+- Never stretch a finished image to convert ratios. Recompose, crop only when safe, or regenerate.
+- For Midjourney-style prompt syntax, express the ratio through the appropriate aspect-ratio parameter when supported (for example `--ar 3:4` or `--ar 16:9`) rather than relying on prose alone.
+
 ## Reference order
 
 Name every attached reference by ordinal and role:
@@ -43,16 +54,17 @@ Choose only relevant failures:
 - panel bleed, missing borders, unreadable order
 - unwanted text, watermark, signature
 - flat default webtoon rendering when painterly texture is required
+- wrong aspect ratio, mixed 3:4/16:9 canvases, stretched conversion, or unsafe crop
 
 ## Prompt template
 
 ```text
-Create [page/cut and ratio] for a graphic novel.
+Create [page/cut] for a graphic novel at the locked aspect ratio: [3:4 portrait OR 16:9 landscape].
 
 REFERENCES: [ordinal role mapping]
 STORY BEAT: [one dramatic job]
 CONTINUITY: [verbatim character/style/state anchors]
-COMPOSITION: [panel/cut plan, reading order, dominant image]
+COMPOSITION: [panel/cut plan, reading order, dominant image, ratio-aware staging]
 SCENE: [subject, action, environment]
 CAMERA AND LIGHT: [shot, angle, lens feel, direction and quality]
 STYLE: [token block plus subject-matter guard]
@@ -63,6 +75,7 @@ CONSTRAINTS: [specific negative constraints]
 ## Assembly
 
 - Keep source images at maximum practical quality.
+- Confirm every page matches the selected 3:4 or 16:9 canvas before typography.
 - Apply one typography system across the book: title, narration, dialogue, SFX.
 - Use the supplied font when licensed and available; provide a fallback otherwise.
 - Define face bounding regions before placing text and expand them by a visual breathing margin. Treat these regions as hard exclusions for captions, balloons, tails, titles, and decorative text.
