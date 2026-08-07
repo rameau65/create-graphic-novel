@@ -42,6 +42,20 @@ Use:
 
 Composite exact dialogue and captions afterward when possible. If direct generation is required, enumerate all on-image text verbatim, define language, balloon type, speaker, and location, and prohibit extra text.
 
+## Script overlay policy
+
+Default to **boxless script placement**. Treat rectangular caption boxes, opaque text panels, and large speech containers as fallback devices rather than the normal solution.
+
+1. Detect and mark protected visual regions before placing any script:
+   - face, hair/head silhouette, neck, torso/body silhouette
+   - hands, arms involved in gestures, and action paths
+   - important props, symbols, tools, food, vehicles, reflections, signs, and story-critical environmental objects
+2. Expand each protected region with a breathing margin. These expanded regions are hard exclusions for narration, dialogue, captions, titles, balloon bodies, and balloon tails.
+3. Rank candidate text areas by visual quietness and reading order. Prefer negative space such as sky, walls, floor, water, blank paper, mist, soft-focus backgrounds, or intentionally reserved empty areas.
+4. Place script directly on the artwork when contrast is sufficient. Improve legibility with typography, spacing, weight, restrained outline/shadow, or a subtle localized treatment before introducing a box.
+5. If a text container is unavoidable, keep it compact, shape it to the available negative space, and minimize opacity and visual mass. Never use a large rectangle merely because it is easy to lay out.
+6. If no safe text area exists, revise the composition or redistribute the script across panels/pages. Never cover a protected character or object to preserve the original text position.
+
 ## Negative constraints
 
 Choose only relevant failures:
@@ -55,6 +69,8 @@ Choose only relevant failures:
 - unwanted text, watermark, signature
 - flat default webtoon rendering when painterly texture is required
 - wrong aspect ratio, mixed 3:4/16:9 canvases, stretched conversion, or unsafe crop
+- text boxes dominating the artwork
+- script overlapping or crowding faces, torsos, hands, gestures, important props, symbols, or focal objects
 
 ## Prompt template
 
@@ -68,7 +84,7 @@ COMPOSITION: [panel/cut plan, reading order, dominant image, ratio-aware staging
 SCENE: [subject, action, environment]
 CAMERA AND LIGHT: [shot, angle, lens feel, direction and quality]
 STYLE: [token block plus subject-matter guard]
-TEXT SPACE: [reserved zones or exact text policy]
+TEXT SPACE: reserve visually quiet negative space away from faces, torsos, hands, gestures, important props and focal objects; prefer boxless script overlay in post-production
 CONSTRAINTS: [specific negative constraints]
 ```
 
@@ -78,10 +94,11 @@ CONSTRAINTS: [specific negative constraints]
 - Confirm every page matches the selected 3:4 or 16:9 canvas before typography.
 - Apply one typography system across the book: title, narration, dialogue, SFX.
 - Use the supplied font when licensed and available; provide a fallback otherwise.
-- Define face bounding regions before placing text and expand them by a visual breathing margin. Treat these regions as hard exclusions for captions, balloons, tails, titles, and decorative text.
-- Size each text container from its copy. Balance width, height, padding, line breaks, line length, and leading so the text fills the shape comfortably without looking cramped, stranded, or mechanically centered.
-- Resolve overflow or imbalance by moving or reshaping the container before reducing type size. Preserve minimum readable type and revise wording only when authorized and semantically safe.
-- Review all containers together at final reading size for consistent visual weight, clear reading order, and sufficient separation from faces and focal action.
+- Define face, head, torso, hand/gesture, and important-object bounding regions before placing text; expand them by a visual breathing margin and treat them as hard exclusions.
+- Search negative space first and place script directly without a text box whenever readability allows.
+- Size any unavoidable text container from its copy. Balance width, height, padding, line breaks, line length, and leading so the text fills the shape comfortably without looking cramped, stranded, or mechanically centered.
+- Resolve overflow or imbalance by moving text into safer negative space, reshaping a minimal container, redistributing script, or revising composition before reducing type size.
+- Review all script placements together at final reading size for consistent visual weight, clear reading order, and sufficient separation from characters and focal objects.
 - Keep clean art, text overlay, and final composite as separate layers/files.
 - Export a reading copy and retain editable masters.
 
