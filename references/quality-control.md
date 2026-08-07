@@ -15,6 +15,7 @@
 - Every face remains fully unobscured and has visible breathing room from captions, balloons, tails, titles, and decorative text.
 - Hands, action, and important props remain unobscured by text.
 - Cover title and focal image remain legible as a thumbnail.
+- Composition is appropriate to the locked ratio: vertical depth and stacked rhythm for 3:4; lateral staging and horizontal eyelines for 16:9.
 
 ## Continuity
 
@@ -29,6 +30,8 @@
 - Inspect hands, eyes, mouths, reflections, overlapping bodies, and panel edges.
 - Check that style references did not leak unwanted subjects or text.
 - Check aspect ratio, cropping, safe margins, borders, and background continuity.
+- Confirm the selected generation ratio is exactly and consistently **3:4 portrait** or **16:9 landscape** across the deliverable.
+- Reject mixed ratios, stretched pages, or destructive crops unless the user explicitly requested them.
 
 ## Text
 
@@ -42,6 +45,7 @@
 ## Delivery
 
 - Page count includes or excludes the cover exactly as requested.
+- The production brief records the chosen ratio (`3:4 portrait` or `16:9 landscape`) and the final files match it.
 - Files are sequentially named and dimensions are consistent.
 - Clean art and final composites are both retained when final pages are produced.
 - Report any unresolved limitation plainly; never label an unchecked artifact final.
