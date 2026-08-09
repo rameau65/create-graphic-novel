@@ -26,4 +26,7 @@ Keep conversational pairs close enough to maintain connection. Delay a reveal be
 - Avoid placing text or critical detail across image-slice boundaries.
 - Verify that exports meet the target platform's current size and file limits before finalizing.
 - Preserve a master long strip and platform-specific sliced exports separately.
+- Keep all text in independent readable regions: no narration, dialogue, title, SFX, balloon, or tail may overlap another text element, cross a slice boundary, clip, or cover a face, body, gesture, focal action, or story-critical object.
+- Inspect every person in every cut at full resolution. Unless explicitly required by the story, require exactly one head, two arms, two hands, two legs, and two feet; reject and repair or regenerate duplicated, missing, fused, detached, or malformed anatomy before assembly.
+- Do not deliver a long strip while any text collision, focal-element obstruction, or anatomy defect remains.
 
