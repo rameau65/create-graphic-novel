@@ -62,7 +62,7 @@ Choose only relevant failures:
 
 - character or costume drift
 - duplicate or missing people/props
-- extra limbs, malformed hands, fused anatomy
+- exactly one head, two arms, two hands, two legs, and two feet per ordinary human figure; no extra, missing, duplicated, fused, detached, or malformed limbs, hands, feet, fingers, faces, torsos, or people
 - mirrored screen direction or wrong eyeline
 - copied subjects from the style reference
 - panel bleed, missing borders, unreadable order
@@ -71,6 +71,7 @@ Choose only relevant failures:
 - wrong aspect ratio, mixed 3:4/16:9 canvases, stretched conversion, or unsafe crop
 - text boxes dominating the artwork
 - script overlapping or crowding faces, torsos, hands, gestures, important props, symbols, or focal objects
+- text overlapping text; balloons, tails, titles, captions, dialogue, or SFX colliding with, clipping, or obscuring one another
 
 ## Prompt template
 
@@ -88,6 +89,8 @@ TEXT SPACE: reserve visually quiet negative space away from faces, torsos, hands
 CONSTRAINTS: [specific negative constraints]
 ```
 
+Every prompt containing people must state the anatomy constraint explicitly; do not rely on a generic “correct anatomy” phrase. Every prompt reserving text space must explicitly forbid text over focal elements and forbid all text-to-text collisions.
+
 ## Assembly
 
 - Keep source images at maximum practical quality.
@@ -99,6 +102,7 @@ CONSTRAINTS: [specific negative constraints]
 - Size any unavoidable text container from its copy. Balance width, height, padding, line breaks, line length, and leading so the text fills the shape comfortably without looking cramped, stranded, or mechanically centered.
 - Resolve overflow or imbalance by moving text into safer negative space, reshaping a minimal container, redistributing script, or revising composition before reducing type size.
 - Review all script placements together at final reading size for consistent visual weight, clear reading order, and sufficient separation from characters and focal objects.
+- Inspect the composite at full resolution for text-to-text overlap, crossed balloon tails, clipped glyphs, and text crossing panel/page edges. Any collision requires reflow or relocation before export.
 - Keep clean art, text overlay, and final composite as separate layers/files.
 - Export a reading copy and retain editable masters.
 
