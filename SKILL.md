@@ -90,6 +90,8 @@ For each page or segment, specify:
 
 ## Direct the visuals
 
+- Apply a zero-tolerance anatomy lock before generation: unless the story explicitly requires otherwise, every human figure has exactly one head, two arms, two hands, two legs, and two feet, with anatomically plausible joints, attachment points, pose, and perspective.
+- Forbid duplicated, missing, fused, detached, or malformed limbs, hands, feet, fingers, faces, torsos, and bodies. Also forbid accidental extra people or repeated body parts caused by panel borders, reflections, motion effects, or overlapping figures.
 - Choose panel count from the emotional beat, never from habit.
 - Give the climax, reveal, or contemplative image the most visual area.
 - Mix shot distances and angles with intent; maintain the 180-degree rule unless deliberately broken.
@@ -114,6 +116,7 @@ For each page or segment, specify:
 
 For all script placement:
 
+- Never allow text-to-text collisions: narration, dialogue, titles, SFX, balloon bodies, balloon tails, and panel-edge text must not overlap, merge, clip, or cross one another.
 - Follow reading order while prioritizing protected visual zones.
 - Prefer quiet areas such as sky, walls, floors, water, mist, blank paper, soft-focus background, or intentionally reserved whitespace.
 - Keep text away from face, head, torso, hands, gestures, and important objects even when a translucent background would technically keep them visible.
@@ -157,6 +160,18 @@ When the user asks to change one page, panel, person, hand, text box, ratio, or 
 4. Recheck neighboring continuity and overall dimensions.
 5. Re-run the page-count and selected-ratio gate; verify one separate cover plus exactly 8 body pages by default, and verify every generated page is consistently 3:4 or 16:9 according to the locked option.
 6. Re-run the protected-zone gate: no script may overlap or crowd faces/heads, torsos, hands/gestures, or important objects; remove unnecessary text boxes wherever feasible.
-7. Deliver the corrected artifact plus a concise change note.
+7. Re-run the anatomy gate on every visible person at full resolution: reject any extra, missing, fused, detached, or malformed limb/body part and repair or regenerate the affected panel.
+8. Re-run the text-collision gate: reject any text that overlaps other text, clips a panel or page edge, crosses a balloon/tail, or obscures protected visual content.
+9. Deliver the corrected artifact plus a concise change note.
+
+## Enforce the zero-defect final gate
+
+Before delivery, inspect every page and every panel at full resolution and again at final reading size. The following are automatic failures, never acceptable minor defects:
+
+- any text covering or crowding a face, body, gesture, story-critical prop, symbol, action, or other focal element
+- any text-to-text, balloon-to-text, tail-to-text, title-to-text, or SFX-to-text overlap, clipping, or unreadable collision
+- any duplicated, missing, fused, detached, or malformed arm, hand, finger, leg, foot, head, face, torso, or person
+
+If any failure appears, do not label or deliver the page as final. Move or reflow text, revise the composition, surgically edit the affected region, or regenerate the panel; then repeat the full gate until all pages pass.
 
 Do not regenerate unrelated pages unless continuity makes it necessary or the user requests a full rebuild.
