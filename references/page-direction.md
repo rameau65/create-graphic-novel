@@ -57,6 +57,11 @@ Treat text boxes as an exception, not the default. Prefer placing narration, dia
 - If a container is unavoidable, use the smallest shape that comfortably fits the copy, with minimal visual mass and no unnecessary background rectangle.
 - Never solve a collision by covering a character or object. Move the text, reshape the composition, or reserve better negative space in the artwork.
 - When the script is dense, redistribute text across panels/pages before allowing it to dominate the image.
+- Prevent text-to-text collisions at layout time: narration, dialogue, titles, SFX, balloons, and tails must have separate readable regions and must not overlap or clip panel/page edges.
+
+## Anatomy lock
+
+For every panel containing people, reserve enough space to show poses clearly and avoid ambiguous overlaps. Unless explicitly required by the story, each person must have exactly one head, two arms, two hands, two legs, and two feet. Reject duplicated, missing, fused, detached, or malformed body parts; repair or regenerate the affected panel before layout approval.
 
 ## Reading and typography
 
