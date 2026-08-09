@@ -27,7 +27,9 @@
 
 ## Image integrity
 
-- Count fingers, limbs, people, and repeated objects at full resolution.
+- Inspect every person panel by panel at full resolution. Unless explicitly required by the story, confirm exactly one head, two arms, two hands, two legs, and two feet per person, with plausible attachment, joints, pose, scale, and perspective.
+- Reject and repair or regenerate any extra, missing, duplicated, fused, detached, or malformed limb, hand, foot, finger, face, torso, body, or accidental person. Do not pass a page because the defect is small or partially hidden.
+- Distinguish reflections, shadows, motion lines, and overlapping figures carefully so they do not create or conceal duplicate anatomy.
 - Inspect hands, eyes, mouths, reflections, overlapping bodies, and panel edges.
 - Check that style references did not leak unwanted subjects or text.
 - Check aspect ratio, cropping, safe margins, borders, and background continuity.
@@ -38,6 +40,7 @@
 
 - Compare every glyph against approved copy.
 - Verify language, punctuation, line breaks, reading order, speaker, balloon tail, and contrast.
+- Confirm no narration, dialogue, title, caption, SFX, balloon body, or balloon tail overlaps, merges with, clips, or obscures any other text element.
 - **Boxless-first gate:** reject unnecessary rectangular caption boxes or large opaque/translucent text panels when the same copy can be placed legibly in negative space.
 - Confirm direct script overlays use visually quiet areas and do not cross protected face/head, torso/body, hand/gesture, or important-object exclusion zones.
 - Confirm every unavoidable text container is sized for its own copy and is optically balanced: adequate padding, intentional line breaks, suitable leading, readable type size, and no cramped or conspicuously empty area.
@@ -45,6 +48,13 @@
 - If a page lacks safe script space, require composition revision or script redistribution rather than allowing overlap with characters or focal objects.
 - Confirm no unwanted text, watermark, signature, or model artifacts.
 - Confirm the chosen font and weight are used consistently and are readable.
+
+## Zero-defect release gate
+
+- Inspect each page twice: once at full resolution for anatomy and collision defects, and once at final reading size for readability and visual crowding.
+- Mark the page failed if any text covers a focal element, any text elements overlap, or any human anatomy is duplicated, missing, fused, detached, or malformed.
+- Repair, reflow, reposition, surgically edit, or regenerate the affected area, then repeat the complete page check.
+- Never label, package, or deliver a failed or unchecked page as final.
 
 ## Delivery
 
