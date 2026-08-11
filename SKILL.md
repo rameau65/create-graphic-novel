@@ -19,7 +19,8 @@ Produce a self-contained graphic-novel package that works without prior chat his
    - paged work: `references/page-direction.md`
    - vertical work: `references/vertical-direction.md`
 5. Read `references/prompt-and-production.md` when generating images, prompts, text overlays, or final files.
-6. Read `references/quality-control.md` before delivery or when revising generated results.
+6. Read `references/resolution-and-print.md` whenever generating final images or PDFs.
+7. Read `references/quality-control.md` before delivery or when revising generated results.
 
 ## Establish the brief
 
@@ -59,6 +60,26 @@ Run this check twice:
 2. **Final gate:** before delivery, count the body pages again and inspect every page dimension. Correct missing, extra, cropped, stretched, mixed-ratio, or off-ratio pages before calling the work complete.
 
 A reference image with another ratio does not override the selected production ratio. Explicit user instructions may change page count or ratio. When the user overrides either value, state the override clearly and use it consistently through production and final QA.
+
+## Lock master resolution and print output
+
+Treat aspect ratio, pixel dimensions, physical trim size, bleed, and PDF export settings as separate production locks. Never assume that setting PDF DPI increases source-image detail.
+
+- Keep a lossless high-resolution master for every cover and page. Do not upscale a low-resolution composited page and call it 4K.
+- Minimum digital masters:
+  - **3:4 portrait:** 3072 × 4096 px.
+  - **16:9 landscape:** 4096 × 2304 px.
+- For print, obtain the intended trim size and printer specification when available. Use **300 ppi at final trim size**, plus the printer's bleed (default **3 mm on every edge** only when no printer specification is supplied).
+- Calculate print raster dimensions from the bleed-inclusive page: `pixels = inches × 300`. If this exceeds the digital minimum, the larger print dimensions govern.
+- Preserve aspect ratio without stretching. If a requested paper trim ratio differs from 3:4 or 16:9, require an explicit crop, padding, or revised canvas decision.
+- Add typography and page assembly at the final master dimensions. Keep clean art, text, and layout editable until export.
+- Export print PDF using the exact bleed-inclusive physical page size, embedded fonts, an output intent/profile appropriate to the printer, and no image downsampling below 300 ppi.
+- Prefer lossless PNG/TIFF masters. When JPEG is unavoidable, use quality 95 or better and avoid repeated recompression.
+- Do not use low-resolution thumbnails, previews, screenshots, or already compressed PDF renders as page sources.
+- Deliver a screen PDF separately when smaller distribution size is needed; never replace the print master with the screen-optimized file.
+- Before delivery, verify each source page's pixel dimensions and each PDF page's physical size, effective ppi, bleed, font embedding, and absence of unintended downsampling.
+
+See `references/resolution-and-print.md` for formulas, default targets, PDF settings, and acceptance checks.
 
 ## Build a Project DNA block
 
@@ -125,7 +146,7 @@ For all script placement:
 
 ## Generate or assemble
 
-When the user asks for actual images, use the available image-generation capability. Generate clean art by default, then add exact typography in a deterministic layout tool when feasible. If image generation must include text, keep it short and verify every glyph.
+When the user asks for actual images, use the available image-generation capability. Generate clean art by default, then add exact typography in a deterministic layout tool when feasible. Generate at the locked master dimensions when supported; otherwise generate the highest native resolution available, then use a documented high-quality enlargement step before typography and final assembly. Never silently substitute a smaller canvas. If image generation must include text, keep it short and verify every glyph.
 
 Create one prompt per page/cut rather than asking a model to invent the whole book at once. Each prompt must identify reference-image order explicitly and include:
 
@@ -166,7 +187,7 @@ When the user asks to change one page, panel, person, hand, text box, ratio, or 
 
 ## Enforce the zero-defect final gate
 
-Before delivery, inspect every page and every panel at full resolution and again at final reading size. The following are automatic failures, never acceptable minor defects:
+Before delivery, inspect every page and every panel at full resolution and again at final reading size. Also run the resolution/print acceptance checks in `references/resolution-and-print.md`. The following are automatic failures, never acceptable minor defects:
 
 - any text covering or crowding a face, body, gesture, story-critical prop, symbol, action, or other focal element
 - any text-to-text, balloon-to-text, tail-to-text, title-to-text, or SFX-to-text overlap, clipping, or unreadable collision
