@@ -19,3 +19,11 @@
 ## QA gate
 
 Reject wrong/mixed aspect ratios, stretched conversions, destructive crops, unnecessary rectangular text boxes, illegible typography, or any text that overlaps or crowds protected visual subjects.
+
+## Google Drive delivery
+
+- Upload all user-facing final artifacts and delivery packages to the [Google Drive `graphic novel` folder](https://drive.google.com/drive/folders/1NZDZ_PIb_tcvbTliI5yof8dQ4g4-7puv).
+- Include final images, PDFs, PPT files, documents, ZIP archives, and requested editable masters; exclude disposable intermediate files and caches.
+- Preserve existing files unless replacement is explicitly requested.
+- Verify each uploaded file by Drive metadata or folder readback before declaring delivery complete.
+- If the user explicitly selects another destination for a task, follow that newer instruction.
