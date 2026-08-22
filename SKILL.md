@@ -154,6 +154,16 @@ Create one prompt per page/cut rather than asking a model to invent the whole bo
 
 Do not claim exact resolution or model-version support without verification. Preserve a user-specified model version; otherwise use a replaceable version token or omit it.
 
+## Save final deliverables to Google Drive
+
+- Upload every user-facing final artifact and delivery package to the [Google Drive `graphic novel` folder](https://drive.google.com/drive/folders/1NZDZ_PIb_tcvbTliI5yof8dQ4g4-7puv).
+- Include final images, PDFs, presentations, documents, ZIP archives, and editable source files when they are part of the requested delivery.
+- Do not upload temporary renders, caches, QA screenshots, or disposable intermediate files unless the user asks for them.
+- Preserve clear filenames and project/version grouping. Never overwrite an existing Drive file unless the user explicitly requests replacement.
+- After upload, verify the returned Drive file ID or URL with metadata readback before reporting completion. Return the verified Drive link with the delivery summary.
+- If upload or verification fails, do not claim that delivery is complete; retain the local artifact and report the blocker.
+- A newer explicit user instruction naming another destination overrides this default for that task.
+
 ## Deliver in useful layers
 
 Match scope to the request. A complete production package normally contains:
