@@ -31,3 +31,11 @@
 PDF의 DPI 숫자만 바꿔도 화질은 늘지 않습니다. 생성 원본의 픽셀 수가 작거나, 작은 조판 캔버스에서 페이지를 만든 뒤 PDF로 저장하거나, 내보내기 과정에서 이미지를 다운샘플링·JPEG 재압축하면 최종 파일이 작고 흐려집니다.
 
 다음 제작부터는 이미지 생성→확대(필요 시)→조판→PDF 내보내기 전 과정에서 위 4K급 마스터와 300 ppi 인쇄 기준을 잠급니다. 상세 계산식과 검수표는 [references/resolution-and-print.md](references/resolution-and-print.md)를 따릅니다.
+
+## 결과물 저장 위치
+
+- 앞으로 이 프로젝트에서 제작하는 모든 최종 결과물과 납품 패키지는 [Google Drive `graphic novel` folder](https://drive.google.com/drive/folders/1NZDZ_PIb_tcvbTliI5yof8dQ4g4-7puv)에 업로드합니다.
+- 이미지, PDF, PPT, 문서, ZIP, 편집용 원본 등 사용자가 받을 최종 파일을 포함합니다.
+- 임시 렌더, 캐시, 테스트 출력은 업로드 대상에서 제외합니다.
+- 업로드 후 Google Drive의 파일 ID 또는 링크를 다시 확인한 뒤 작업 완료로 안내합니다.
+- 사용자가 다른 저장 위치를 명시한 경우에는 최신 지시를 우선합니다.
