@@ -26,3 +26,10 @@ Source packages synchronized from the Webtoon & Graphic Novel project. Visual-ge
 - Prefer direct script placement in intentional negative space.
 - Faces, heads, torsos/body silhouettes, hands, gestures, and important objects/props/symbols are hard no-text zones with breathing margin.
 - If safe space is insufficient, redistribute copy or revise composition rather than cover the subject.
+
+## Shared delivery policy
+
+- Default final-delivery destination: [Google Drive `graphic novel` folder](https://drive.google.com/drive/folders/1NZDZ_PIb_tcvbTliI5yof8dQ4g4-7puv).
+- Upload all user-facing final files and requested editable masters; omit disposable intermediates.
+- Verify uploaded file IDs or links before reporting completion.
+- A newer task-specific destination from the user takes precedence.
